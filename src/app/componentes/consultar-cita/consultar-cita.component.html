@@ -13,9 +13,9 @@
         </ul>
     </div>
     <div class="container-fluid">
-        <form #consultarForm="ngForm" (ngSubmit)="getByInfoCita()">
+        <form #consultarForm="ngForm">
         <!-- CARD -->
-        <div class="col-md-8 mb-4 mx-auto my-auto">
+        <div class="col-md-10 mb-4 mx-auto my-auto">
             <div class="card mb-4" id="formulario">
                 <div class="card-header py-3 text-center">
                     <h5 class="mb-0">Citas</h5>
@@ -42,20 +42,10 @@
                                     <td>{{item.nomConsultorio}}</td>
                                     <td>{{item.ubicacion}}</td>
                                     <td>{{item.nomModalidad}}</td>
-                                    <td>{{item.fecha}}</td>
+                                    <td>{{item.dia+"/"+item.mes+"/"+item.anio}}</td>
                                     <td>{{item.horario}}</td>
                                     <td>{{item.status}}</td>
                                   </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
                             </tbody>
                         </table>
                 </div>

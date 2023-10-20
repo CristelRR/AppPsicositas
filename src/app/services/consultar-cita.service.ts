@@ -9,7 +9,7 @@ export class ConsultarCitaService {
 
   constructor(private http : HttpClient) { }
 
-  URL_API = 'http://localhost:3000/cita/';
+  URL_API = 'http://localhost:3000/consultar/';
 
   public consultarCita:ConsultarCita={
     idCita: '',
@@ -20,11 +20,13 @@ export class ConsultarCitaService {
     apMaternoAlu:'',
     nombrePsi: '',
     apPaternoPsi: '',
-    apMaternnoPsi: '',
+    apMaternoPsi: '',
     nomConsultorio: '',
     ubicacion: '',
     nomModalidad: '',
-    fecha: '',
+    dia: '',
+    mes: '',
+    anio: '',
     horario: ''
   };
 

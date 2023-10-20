@@ -7,10 +7,12 @@ export interface ConsultarCita{
     apMaternoAlu:String,
     nombrePsi: String,
     apPaternoPsi: String,
-    apMaternnoPsi: String,
+    apMaternoPsi: String,
     nomConsultorio: String,
     ubicacion: String,
     nomModalidad: String,
-    fecha: String,
+    dia: String,
+    mes: String,
+    anio: String,
     horario: String
 }
