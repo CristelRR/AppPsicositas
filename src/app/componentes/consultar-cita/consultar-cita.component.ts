@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { ConsultarCitaService } from 'src/app/services/consultar-cita.service';
 import { ConsultarCita } from 'src/app/models/consultarCita';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-consultar-cita',
