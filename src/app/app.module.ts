@@ -13,6 +13,8 @@ import { AgendarConsultorioComponent } from './componentes/agendar-consultorio/a
 import { PagoComponent } from './componentes/pago/pago.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { MapaComponent } from './componentes/mapa/mapa.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { RegistrarseComponent } from './componentes/registrarse/registrarse.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { MapaComponent } from './componentes/mapa/mapa.component';
     AgendarConsultorioComponent,
     PagoComponent,
     HomeComponent,
-    MapaComponent
+    MapaComponent,
+    LoginComponent,
+    RegistrarseComponent
   ],
   imports: [
     BrowserModule,

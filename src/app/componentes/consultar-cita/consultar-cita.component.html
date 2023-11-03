@@ -33,6 +33,7 @@
                                     <th scope="col">Fecha</th>
                                     <th scope="col">Hora</th>
                                     <th scope="col">Status</th>
+                                    <th scope="col">Pago</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -45,7 +46,8 @@
                                     <td>{{item.dia+"/"+item.mes+"/"+item.anio}}</td>
                                     <td>{{item.horario}}</td>
                                     <td>{{item.status}}</td>
-                                  </tr>
+                                    <td><a href="/pago" class="btn btn-primary">Pagar</a></td>
+                                </tr>                                
                             </tbody>
                         </table>
                 </div>

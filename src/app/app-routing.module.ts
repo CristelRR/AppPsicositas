@@ -8,16 +8,20 @@ import { PagoComponent } from './componentes/pago/pago.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { MapaComponent } from './componentes/mapa/mapa.component';
 import { BarraCitaComponent } from './componentes/barra-cita/barra-cita.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { RegistrarseComponent } from './componentes/registrarse/registrarse.component';
 
 const routes: Routes = [
   { path:'consultar-cita', component:ConsultarCitaComponent },
   { path:'agendar-cita', component:AgendarCitaComponent },
-  { path:'validar-cita', component:ValidarCitaComponent},
-  { path:'agendar-consultorio', component:AgendarConsultorioComponent},
-  { path: 'barra-cita', component:BarraCitaComponent},
-  { path:'pago', component:PagoComponent},
+  { path:'validar-cita', component:ValidarCitaComponent },
+  { path:'agendar-consultorio', component:AgendarConsultorioComponent },
+  { path: 'barra-cita', component:BarraCitaComponent },
+  { path:'pago', component:PagoComponent },
   { path:'', component:HomeComponent },
-  { path: 'mapa', component: MapaComponent}
+  { path: 'mapa', component:MapaComponent },
+  { path: 'login', component:LoginComponent },
+  { path: 'registrarse', component:RegistrarseComponent }
 ];
 
 @NgModule({
