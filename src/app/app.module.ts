@@ -12,9 +12,9 @@ import { ValidarCitaComponent } from './componentes/validar-cita/validar-cita.co
 import { AgendarConsultorioComponent } from './componentes/agendar-consultorio/agendar-consultorio.component';
 import { PagoComponent } from './componentes/pago/pago.component';
 import { HomeComponent } from './componentes/home/home.component';
-import { MapaComponent } from './componentes/mapa/mapa.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistrarseComponent } from './componentes/registrarse/registrarse.component';
+import { MapaComponent } from './componentes/mapa/mapa.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +26,9 @@ import { RegistrarseComponent } from './componentes/registrarse/registrarse.comp
     AgendarConsultorioComponent,
     PagoComponent,
     HomeComponent,
-    MapaComponent,
     LoginComponent,
-    RegistrarseComponent
+    RegistrarseComponent,
+    MapaComponent
   ],
   imports: [
     BrowserModule,

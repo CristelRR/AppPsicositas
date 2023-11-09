@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LugaresService } from 'src/app/services/lugares.service';
 import { icon, Map, marker, tileLayer, routing, latLng } from 'leaflet';
 import 'leaflet-routing-machine';
