@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +15,15 @@ import { HomeComponent } from './componentes/home/home.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistrarseComponent } from './componentes/registrarse/registrarse.component';
 import { MapaComponent } from './componentes/mapa/mapa.component';
+import { TiendaComponent } from './componentes/tienda/tienda.component';
+import { DetallesComponent } from './componentes/detalles/detalles.component';
+import { CarritoComponent } from './componentes/carrito/carrito.component';
+import { CarritoItemComponent } from './componentes/carrito-item/carrito-item.component';
+
+//IMPORTACIONES EXTERNAS
+import { NgxPayPalModule } from 'ngx-paypal';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { ModalComponent } from './componentes/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -28,15 +37,23 @@ import { MapaComponent } from './componentes/mapa/mapa.component';
     HomeComponent,
     LoginComponent,
     RegistrarseComponent,
-    MapaComponent
+    MapaComponent,
+    TiendaComponent,
+    DetallesComponent,
+    CarritoComponent,
+    CarritoItemComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule, //PERMITE EL USO DE FORMULARIOS
-    HttpClientModule
+    HttpClientModule,
+    NgxPayPalModule,
+    NgxSpinnerModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

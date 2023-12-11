@@ -7,6 +7,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CarreraService {
 
+  constructor(private http: HttpClient) { }
+
   URL_API = 'http://localhost:3000/carrera/'
 
   public carrera:Carrera={
@@ -16,8 +18,6 @@ export class CarreraService {
   };
 
   carreras:Carrera[]=[];
-
-  constructor(private http: HttpClient) { }
 
   getCarrera(){
     return this.http.get<Carrera[]>(this.URL_API);

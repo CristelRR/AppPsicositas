@@ -9,6 +9,8 @@ import { HomeComponent } from './componentes/home/home.component';
 import { BarraCitaComponent } from './componentes/barra-cita/barra-cita.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistrarseComponent } from './componentes/registrarse/registrarse.component';
+import { TiendaComponent } from './componentes/tienda/tienda.component';
+import { DetallesComponent } from './componentes/detalles/detalles.component';
 
 const routes: Routes = [
   { path:'consultar-cita', component:ConsultarCitaComponent },
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path:'', component:HomeComponent },
   { path: 'login', component:LoginComponent },
   { path: 'registrarse', component:RegistrarseComponent },
+  { path: 'tienda', component:TiendaComponent},
+  { path: 'detalles', component:DetallesComponent}
 ];
 
 @NgModule({

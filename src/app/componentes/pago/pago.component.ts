@@ -10,41 +10,37 @@ declare var paypal:any;
 })
 export class PagoComponent implements OnInit {
 
-  @ViewChild('paypal', { static: true })
-  paypalElement!: ElementRef;
+  @ViewChild('paypal', { static: true }) paypalElement!: ElementRef; /*PERMITE PODER REFERENCIAR #paypal */
 
-  producto = {
-    descripcion: 'producto en venta',
-    precio: 599.99,
-    img: 'imagen de tu producto'
-  }
-
-  title = 'angular-paypal-payment';
-
-  ngOnInit(): void {
-    paypal
-      .Buttons({
-        createOrder: (data:any, actions:any) => {
-          return actions.order.create({
-            purchase_units: [
-              {
-                description: this.producto.descripcion,
-                amount: {
-                  currency_code: 'MXN',
-                  value: this.producto.precio
-                }
+  ngOnInit(): void { /*El método se ejecuta cuando el componente se inicializa*/
+    paypal 
+    .Buttons({
+      style:{ /*Dar estilo a la interfaz de paypal*/
+        color:'blue',
+        shape:'pill',
+        label:'pay'
+      },
+      createOrder: function(data:any, actions:any) { /*Agregar información del pago */
+        return actions.order.create({
+          purchase_units: [{
+              amount: {
+                value: 100,
+                currency_code: 'MXN'
               }
-            ]
-          })
-        },
-        onApprove: async (data: any, actions: any) => {
-          const order = await actions.order.capture();
-          console.log(order);
-        },
-        onError: (err: any) => {
-          console.log(err);
-        }
-      })
-      .render(this.paypalElement.nativeElement);
+          }]
+        });
+      },
+      onApprove: function(data:any, actions:any){ /*Capturar los valores del pago*/
+        actions.order.capture().then(function (detalles:any){
+          console.log(detalles);
+          window.location.href="" /*Redireccionar otra pantalla cuando la compra sea exitosa*/
+        });
+      },
+      onCancel: function(data:any) { /*Cancelar un pago*/
+        alert("Pago cancelado");
+        console.log(data);
+      }
+    }) /*Se crea el bóton de pago*/
+      .render(this.paypalElement.nativeElement); /*El método render() permite hacer visible el bóton en el HTML */
   }
 }
