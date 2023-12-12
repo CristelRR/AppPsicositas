@@ -16,30 +16,30 @@ export class LoginComponent {
 
   ngOnInit(): void{}
 
-  valLog(form:NgForm){
-    console.log('Validando...')
-    this.loginService.valLog(form.value).subscribe(
-      res => {
-        if(res.length == 0){
+  valLog(form: NgForm) {
+    console.log('Validando...');
+    this.loginService.valLog(this.loginService.login).subscribe(
+      (res: any) => {
+        if (res.length === 0) {
           console.log('Usuario o contraseña incorrecto');
           form.reset();
-        }else{
-          console.log('Sesión Iniciada')
-          if(res[0].rol == 'alumno'){
+        } else {
+          console.log('Sesión Iniciada', res[0]);
+          if (res[0].rol === 'alumno') {
             console.log('Inicio alumno');
             this.router.navigate(['agendar-cita']);
-          }else{
+          } else {
             console.log('psicologo');
-            this.router.navigate(['agendar-consultorio'])
+            this.router.navigate(['agendar-consultorio']);
           }
         }
       },
       err => {
-        console.log('Error al iniciar' + err)
+        console.error('Error al iniciar sesión:', err);
       }
-    )
-    console.log('No valido')
-  }
+    );
+    console.log('No valido');
+  }  
 
   formReset(form:NgForm){
     this.loginService.login = form.value;

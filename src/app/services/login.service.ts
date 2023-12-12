@@ -13,9 +13,9 @@ export class LoginService {
     id_usuario:'',
     password:'',
     rol:''
-  }
+  };
 
-  loginn:Login[]=[]
+  loginn:Login[]=[];
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +23,8 @@ export class LoginService {
     return this.http.get<Login[]>(this.URL_API)
   }
 
-  valLog(loginn:Login){
-    return this.http.post<Login[]>(this.URL_API+loginn.id_usuario,loginn);
-  }
+  valLog(loginn: Login) {
+    return this.http.post<Login[]>(`${this.URL_API}/${loginn.id_usuario}/${loginn.password}`, {});
+  }  
+  
 }
