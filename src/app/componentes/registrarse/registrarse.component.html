@@ -5,53 +5,56 @@
                 <div class="text-center mb-4">
                     <h2>Registrate</h2>
                 </div>
-                <form>
+                <form #alumnoForm="ngForm" (ngSubmit)="createAlumno(alumnoForm)">
                     <!-- nombreAlu -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="nombreAlu">Nombre</label>
-                        <input type="text" id="nombreAlu" class="form-control form-control-lg" />
+                        <input type="text" id="nombreAlu" class="form-control form-control-lg"[(ngModel)]="alumnoService.alumno.nombreAlu" name="nombreAlu">
                     </div>
 
                     <!-- apPaternoAlu -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="apPaternoAlu">Apellido paterno</label>
-                        <input type="text" id="apPaternoAlu" class="form-control form-control-lg" />
+                        <input type="text" id="apPaternoAlu" class="form-control form-control-lg" [(ngModel)]="alumnoService.alumno.apPaternoAlu" name="apPaternoAlu">
                     </div>
 
                     <!-- apMaternoAlu -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="apMaternoAlu">Apellido materno</label>
-                        <input type="text" id="apMaternoAlu" class="form-control form-control-lg" />
+                        <input type="text" id="apMaternoAlu" class="form-control form-control-lg" [(ngModel)]="alumnoService.alumno.apMaternoAlu"name="apMaternoAlu">
                     </div>
 
                     <!-- idAlumno -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="idAlumno">Número de control</label>
-                        <input type="text" id="idAlumno" class="form-control form-control-lg" />
+                        <input type="text" id="idAlumno" class="form-control form-control-lg" [(ngModel)]="alumnoService.alumno.idAlumno" name="idAlumno">
                     </div>
 
                     <!-- correo -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="correo">Correo</label>
-                        <input type="email" id="correo" class="form-control form-control-lg" />
+                        <input type="email" id="correo" class="form-control form-control-lg" [(ngModel)]="alumnoService.alumno.correo" name="correo">
                     </div>
 
                     <!-- telefono -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="telefono">Télefono</label>
-                        <input type="text" id="telefono" class="form-control form-control-lg" />
+                        <input type="text" id="telefono" class="form-control form-control-lg" [(ngModel)]="alumnoService.alumno.telefono" name="telefono">
                     </div>
 
                     <!-- carrera -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="carrera">Carrera</label>
-                        <input type="text" id="carrera" class="form-control form-control-lg" />
+                        <select class="form-select" id="carrera" placeholder="Selecciona psicologo" name="idCarrera" [(ngModel)]="carreraService.carrera.idCarrera">
+                            <option selected>Selecciona carrera...</option>
+                            <option *ngFor="let item of carreraService.carreras" [value]="item.idCarrera">{{item.nomCarrera}}</option>
+                          </select>
                     </div>
 
                     <!-- password -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="password">Contraseña</label>
-                        <input type="password" id="password" class="form-control form-control-lg" />
+                        <input type="password" id="password" class="form-control form-control-lg" [(ngModel)]="alumnoService.alumno.password" name="password">
                     </div>
 
                     <div class="d-flex justify-content-around align-items-center mb-4">
@@ -65,7 +68,7 @@
 
                     <!-- Submit button -->
                     <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <button type="submit" class="btn btn-primary" type="submit">Ingresar</button>
                     </div>
 
                 </form>

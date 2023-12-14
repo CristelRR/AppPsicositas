@@ -16,6 +16,8 @@ export class CarritoComponent implements OnInit {
 
   cartItems: CarritoItem[] = [];
   total = 0;
+  pagoRealizado: boolean = false;
+  pagoPendiente: boolean = false; // Asegúrate de definir este booleano según tu lógica de pago
 
   public payPalConfig?: IPayPalConfig;
 
@@ -70,7 +72,10 @@ export class CarritoComponent implements OnInit {
       },
       onClientAuthorization: (data) => {
         console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', JSON.stringify(data));
+        this.pagoRealizado = true; // Cambia el estado del pago a "realizado"
         // Aquí puedes informar al servidor sobre la transacción completada
+        this.vaciarCarrito();
+
       },
       onCancel: (data, actions) => {
         console.log('OnCancel', data, actions);

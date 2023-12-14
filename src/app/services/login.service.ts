@@ -27,4 +27,7 @@ export class LoginService {
     return this.http.post<Login[]>(`${this.URL_API}/${loginn.id_usuario}/${loginn.password}`, {});
   }  
   
+  insUsr(loginn:Login){
+    return this.http.post(this.URL_API, loginn)
+  }
 }

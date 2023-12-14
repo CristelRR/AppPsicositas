@@ -1,15 +1,18 @@
-<ngx-spinner>
-    <h3>making payment...</h3>
+<ngx-spinner *ngIf="pagoPendiente">
+    <h3>Realizando pago...</h3>
 </ngx-spinner>
-<div *ngIf="cartItems.length<1">
+
+<div *ngIf="cartItems.length < 1">
     <div class="alert alert-info text-center">
-        <h4>Tu carrito esta vacío</h4>
+        <h4>Tu carrito está vacío</h4>
     </div>
 </div>
-<div *ngIf="cartItems.length>0">
-    <div class="alert alert-info text-center" *ngIf="cartItems.length>0">
+
+<div *ngIf="cartItems.length > 0">
+    <div class="alert alert-info text-center">
         <h4>Tu carrito</h4>
     </div>
+
     <div class="text-center">
         <ul class="list-group">
             <li class="list-group-item" *ngFor="let item of cartItems; index as i">
@@ -24,11 +27,14 @@
             </li>
         </ul>
     </div>
+
     <div class="alert alert-warning text-center mb-4">
-        <strong>Total: </strong>${{total | number: '1.2'}}
+        <strong>Total: </strong>${{ total | number: '1.2' }}
     </div>
+
     <button class="btn btn-outline-danger btn-block mb-4" (click)="vaciarCarrito()">
         <i class="fas fa-ban"></i> Vaciar Carrito
     </button>
-    <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+
+    <ngx-paypal [config]="payPalConfig" *ngIf="!pagoRealizado"></ngx-paypal>
 </div>
